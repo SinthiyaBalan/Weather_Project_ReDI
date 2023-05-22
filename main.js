@@ -16,22 +16,16 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=munich&appid=e10c884289
     console.log(i.name)
     console.log(i.sys.country);
     
-    
-   
-  
-
-   
-
     li.textContent = `City Name :${i.name} ,Temp :${i.main.temp} , Country :${i.sys.country} , Weather : ${i.weather[0].main}`;
 
   
     ul.appendChild(li);
 
-    //   i.weather[0].forEach(element => {
-    //     console.log(element.main)
-    //   });
+    // another way to get data from array of objects
+   /*    i.weather.forEach(element => {
+        console.log(element.main)
+      }); */
         
   })
-
 
 .catch(e => console.log(e))
