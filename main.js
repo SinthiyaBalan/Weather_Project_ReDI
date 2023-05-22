@@ -1,5 +1,3 @@
-
-
 const ul = document.createElement('ul')
 document.body.appendChild(ul)
 
@@ -13,14 +11,11 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${UserCity}&appid=e10c8
     const li = document.createElement('li');
  
     console.log(i);
+    // C = K – 273.15  kelvin to Celsius 
 
-    console.log(i.main.temp)
-    console.log(i.name)
-    console.log(i.sys.country);
+    let toCelsius = Math.round(i.main.temp - 273.15);
     
-    li.textContent = `City :${i.name} ,Temp :${i.main.temp} , Country :${i.sys.country} , Weather : ${i.weather[0].main}`;
-
-  
+    li.textContent = `City :${i.name} ,Temp :${toCelsius} °C, Country :${i.sys.country} , Weather : ${i.weather[0].main}`;
     ul.appendChild(li);
 
     // another way to get data from array of objects
